@@ -1,0 +1,1 @@
+ALTER TABLE `user_notifications` MODIFY COLUMN `type` enum('supplier_response','quotation_ready','order_generated','order_cancelled','quotation_reopened','price_alert','delivery_adjusted','no_response_48h','doc_expired','item_edited','system') NOT NULL;

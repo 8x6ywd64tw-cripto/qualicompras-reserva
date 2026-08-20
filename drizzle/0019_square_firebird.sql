@@ -1,0 +1,42 @@
+CREATE TABLE `brand_aliases` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`aliasName` varchar(300) NOT NULL,
+	`aliasNormalized` varchar(300) NOT NULL,
+	`canonicalName` varchar(300) NOT NULL,
+	`canonicalNormalized` varchar(300) NOT NULL,
+	`reason` text,
+	`createdBy` int,
+	`createdByName` varchar(255),
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `brand_aliases_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `order_item_remanagements` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`originalOrderId` int NOT NULL,
+	`originalOrderCode` varchar(50),
+	`complementaryOrderId` int,
+	`complementaryOrderCode` varchar(50),
+	`quotationId` int NOT NULL,
+	`productName` varchar(500) NOT NULL,
+	`unit` varchar(50) NOT NULL,
+	`originalQuantity` decimal(12,3) NOT NULL,
+	`availableQuantity` decimal(12,3) NOT NULL,
+	`deficit` decimal(12,3) NOT NULL,
+	`originalSupplierId` int NOT NULL,
+	`originalSupplierName` varchar(300),
+	`originalUnitPrice` decimal(12,4),
+	`alternativeSupplierId` int,
+	`alternativeSupplierName` varchar(300),
+	`alternativeUnitPrice` decimal(12,4),
+	`alternativeBrand` varchar(300),
+	`alternativeRank` int,
+	`justification` text NOT NULL,
+	`remanagementStatus` enum('completed','failed_no_alternative','cancelled') NOT NULL DEFAULT 'completed',
+	`costImpact` decimal(12,2),
+	`userId` int NOT NULL,
+	`userName` varchar(255),
+	`userEmail` varchar(255),
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `order_item_remanagements_id` PRIMARY KEY(`id`)
+);

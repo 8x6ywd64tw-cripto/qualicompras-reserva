@@ -1,0 +1,2 @@
+ALTER TABLE `purchase_orders` MODIFY COLUMN `status` enum('pending_approval','approved','sent','delivered','cancelled','purchased') NOT NULL DEFAULT 'pending_approval';--> statement-breakpoint
+ALTER TABLE `purchase_orders` ADD `purchasedAt` timestamp;

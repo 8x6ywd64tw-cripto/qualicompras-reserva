@@ -1,0 +1,21 @@
+{
+  "name": "QualiCompras - Central de Compras Inteligente",
+  "short_name": "QualiCompras",
+  "description": "Sistema de gestão de compras da Qualities Refeições - Grupo Comenda. Cotações, fornecedores, pedidos e controle de custos.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1B4C",
+  "theme_color": "#25346D",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

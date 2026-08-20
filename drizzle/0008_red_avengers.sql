@@ -1,0 +1,1 @@
+ALTER TABLE `quotations` MODIFY COLUMN `status` enum('draft','open','closed','ordered','cancelled') NOT NULL DEFAULT 'draft';
